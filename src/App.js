@@ -77,6 +77,7 @@ function App() {
       "SpaceboxCollection/Spacebox1/_front.png",
       "SpaceboxCollection/Spacebox1/_back.png",
     ]);
+
     scene.background = texture;
 
     //add a plane
