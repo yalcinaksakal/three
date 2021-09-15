@@ -26,14 +26,14 @@ function App() {
     renderer.setPixelRatio(window.devicePixelRatio);
 
     const aspect = window.innerWidth / window.innerHeight;
-    renderer.setSize(window.innerWidth * 0.95, window.innerHeight * 0.95);
+    renderer.setSize(window.innerWidth, window.innerHeight);
 
     //camera
     const fov = 60;
     const near = 1.0;
     const far = 1000.0;
     const camera = new PerspectiveCamera(fov, aspect, near, far);
-    camera.position.set(75, 20, 0);
+    camera.position.set(100, 150, 200);
 
     //scene
     const scene = new Scene();
