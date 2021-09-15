@@ -81,9 +81,9 @@ function App() {
 
     //add a plane
     const plane = new Mesh(
-      new PlaneGeometry(100, 100, 2, 2),
+      new PlaneGeometry(200, 100, 2, 2),
       new MeshStandardMaterial({
-        color: "white",
+        color: "rgb(206, 194, 123)",
         transparent: false,
       })
     );
@@ -91,17 +91,18 @@ function App() {
     plane.castShadow = false;
     plane.receiveShadow = true;
     plane.rotation.x = -Math.PI / 2;
-    plane.material.side=DoubleSide;
+    plane.material.side = DoubleSide;
+    plane.position.set(-100, 0, 0);
     scene.add(plane);
 
     //add  a box
     const box = new Mesh(
-      new BoxGeometry(2, 2, 2),
+      new BoxGeometry(2, 3, 2),
       new MeshStandardMaterial({
-        color: "gray",
+        color: "red",
       })
     );
-    box.position.set(0, 2, 0);
+    box.position.set(-100, 2, 0);
     box.castShadow = true;
     box.receiveShadow = true;
     scene.add(box);
@@ -114,7 +115,9 @@ function App() {
         const box = new Mesh(
           new BoxGeometry(2, 2, 2),
           new MeshStandardMaterial({
-            color: 0x808080,
+            color: `rgb(${Math.floor(Math.random() * 255)},${Math.floor(
+              Math.random() * 255
+            )},${Math.floor(Math.random() * 255)})`,
           })
         );
         box.position.set(
